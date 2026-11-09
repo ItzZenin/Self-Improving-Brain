@@ -18,7 +18,6 @@ class SurvivalEngine:
         with open(self.brn_file, 'rb') as f:
             self.brain_data = pickle.load(f)
         
-        # LAZY INITIALIZATION: If this module doesn't exist, create it.
         if self.MODULE_KEY not in self.brain_data['modules']:
             print(f"[SurvivalEngine] Module '{self.MODULE_KEY}' not found. Initializing new lobe...")
             self._init_module()
